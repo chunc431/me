@@ -1,0 +1,17 @@
+body {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.block {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+}
+
+#block1 { background-color: red; }
+#block2 { background-color: blue; }
+#block3 { background-color: green; }
+#block4 { background-color: yellow; }
+#block5 { background-color: purple; }
