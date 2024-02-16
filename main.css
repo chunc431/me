@@ -2,12 +2,25 @@ body {
     position: relative;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
+}
+
+#center-text {
+    position: absolute;
+    z-index: 1;
+    color: black;
+    font-size: 24px;
+    text-align: center;
+    left: 50%; 
+    top: 50%; 
+    transform: translate(-50%, -50%); 
 }
 
 .block {
     position: absolute;
     width: 300px;
     height: 300px;
+    cursor: pointer;
 }
 
 #block1 { background-color: red; }
