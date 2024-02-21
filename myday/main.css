@@ -1,0 +1,88 @@
+body {
+  background-color: #00DF09;
+  font-family: Arial, sans-serif;
+  position: relative;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.2;
+  font-size: 2.6rem;
+  overflow: hidden;
+}
+
+img {
+  position: absolute;
+  cursor: pointer;
+  transition: transform 0.5s ease; /* Smooth transition for transformations */
+}
+
+/* Individual styles for each image */
+#img1 {
+  top: 25vh;
+  right: 42vw;
+  transform: rotate(15deg);
+  width: 18vw; /* Adjusted size */
+  height: auto;
+}
+
+#img2 {
+  bottom: 0vh;
+  left: 10vw;
+  transform: rotate(10deg);
+  width: 23vw; /* Adjusted size */
+  height: auto;
+}
+
+#img3 {
+  top: 5vh;
+  left: 2vw;
+  transform: rotate(-15deg);
+  width: 21vw; /* Adjusted size */
+  height: auto;
+}
+
+#img4 {
+  top: 0vh;
+  right: 0vw;
+  width: 37vw; /* Adjusted size */
+  height: auto;
+}
+
+.draggable {
+  display: inline-block;
+  cursor: move;
+  margin: 2px;
+}
+
+/* Glow effect */
+.text-glow {
+  text-shadow: 0 0 8px #fff;
+}
+
+/* Blink effect */
+@keyframes blink {
+  50% {
+      opacity: 0;
+  }
+}
+.text-blink {
+  animation: blink 1s step-start 0s infinite;
+}
+
+/* Shake effect */
+@keyframes shake {
+  0%, 100% {
+      transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+      transform: translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+      transform: translateX(10px);
+  }
+}
+.text-shake {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both infinite;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
