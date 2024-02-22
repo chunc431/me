@@ -9,6 +9,20 @@ body {
   overflow: hidden;
 }
 
+.title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10px;
+  font-size: 2vw;
+  z-index: 10;
+}
+
+#back-button {
+  pointer-events: auto; 
+  cursor: pointer; 
+}
+
 img {
   position: absolute;
   cursor: pointer;

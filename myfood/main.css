@@ -17,6 +17,11 @@ body, html {
     pointer-events: none;
 }
 
+#back-button {
+    pointer-events: auto; 
+    cursor: pointer; 
+}
+
 .grid {
     display: flex;
     flex-wrap: wrap;

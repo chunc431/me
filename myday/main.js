@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.title').addEventListener('click', function() {
+        window.history.back();
+    });
+
     document.querySelectorAll('p').forEach(p => {
         let words = p.innerText.split(/\s+/).map(word => {
             let span = document.createElement('span');
@@ -29,6 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
         rebindDragEvents(); 
     }
 
+    rebindDragEvents();
+
     function rebindDragEvents() {
         document.querySelectorAll('.draggable').forEach(word => {
             word.removeEventListener('dragstart', handleDragStart);
@@ -39,8 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
             word.addEventListener('drop', handleDrop);
         });
     }
-
-    rebindDragEvents();
 
     function addEffectToParagraphs(effectClass) {
         document.querySelectorAll('p').forEach(p => p.classList.add(effectClass));

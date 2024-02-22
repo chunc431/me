@@ -13,6 +13,11 @@ body {
     color: white;
 }
 
+#back-button {
+    pointer-events: auto; 
+    cursor: pointer; 
+  }  
+
 .center-text {
     font-size: 5vw;
     filter: blur(0.2vw); 
@@ -20,7 +25,7 @@ body {
 
 .word {
     position: absolute;
-    cursor: pointer;
+    pointer-events: none;
 }
 
 @media (max-width: 1000px) {

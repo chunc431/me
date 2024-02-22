@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('back-button').addEventListener('click', () => {
+        window.history.back();
+    });
+
     const items = document.querySelectorAll('.clickable');
     items.forEach(item => {
         item.addEventListener('click', () => {

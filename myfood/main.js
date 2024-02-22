@@ -1,4 +1,4 @@
-let zIndex = 21; 
+let zIndex = 21;
 
 function openPopup(element) {
     const popup = document.createElement('div');
@@ -55,3 +55,7 @@ function dragElement(elmnt) {
         document.onmousemove = null;
     }
 }
+
+document.getElementById('back-button').addEventListener('click', function() {
+    window.location.href = '../index.html'; 
+});
