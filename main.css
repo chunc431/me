@@ -14,13 +14,14 @@ body {
     text-align: center;
     left: 50%; 
     top: 50%; 
+    pointer-events: none;
     transform: translate(-50%, -50%); 
 }
 
 .block {
     position: absolute;
-    width: 300px;
-    height: 300px;
+    width: 40vw;
+    height: auto;
     cursor: pointer;
 }
 

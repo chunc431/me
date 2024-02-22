@@ -1,28 +1,59 @@
+let zIndex = 21; // Initial zIndex for popups
+
 function openPopup(element) {
-    document.getElementById('overlay').style.display = 'block';
-    document.getElementById('popup').style.display = 'flex';
-    document.getElementById('popup-image').src = element.querySelector('img').src;
-    document.getElementById('popup-desc').textContent = element.getAttribute('data-desc');
+    const popup = document.createElement('div');
+    popup.classList.add('popup');
+    popup.style.left = '50%';
+    popup.style.top = '50%';
+    popup.style.transform = 'translate(-50%, -50%)';
+    popup.style.zIndex = zIndex++;
+
+    const img = document.createElement('img');
+    img.src = element.querySelector('img').src;
+
+    const desc = document.createElement('p');
+    desc.textContent = element.getAttribute('data-desc');
+
+    popup.appendChild(img);
+    popup.appendChild(desc);
+
+    document.body.appendChild(popup);
+
+    // Allow dragging the popup
+    dragElement(popup);
+
+    // Close popup on image click
+    img.onclick = function() {
+        popup.remove();
+    }
 }
 
-// Close popup functionality
-let closeDraggable = document.getElementById('close-draggable');
-let trashCan = document.getElementById('trash-can');
+function dragElement(elmnt) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    elmnt.onmousedown = dragMouseDown;
 
-closeDraggable.addEventListener('dragstart', function(event) {
-    event.dataTransfer.setData('text/plain', 'close');
-});
-
-trashCan.addEventListener('dragover', function(event) {
-    event.preventDefault();
-});
-
-trashCan.addEventListener('drop', function(event) {
-    event.preventDefault();
-    if (event.dataTransfer.getData('text') === 'close') {
-        document.getElementById('overlay').style.display = 'none';
-        document.getElementById('popup').style.display = 'none';
+    function dragMouseDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        document.onmousemove = elementDrag;
     }
-});
 
-// You can add more JavaScript here for other functionalities as needed.
+    function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    }
+
+    function closeDragElement() {
+        document.onmouseup = null;
+        document.onmousemove = null;
+    }
+}

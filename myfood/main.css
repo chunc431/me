@@ -2,16 +2,7 @@ body, html {
     margin: 0;
     padding: 0;
     background-color: white;
-}
-
-#overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #yum {
@@ -19,8 +10,11 @@ body, html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 48px;
-    z-index: 10;
+    color: #FA00FF;
+    font-size: 35vw;
+    font-weight: 500;
+    z-index: 1;
+    pointer-events: none;
 }
 
 .grid {
@@ -39,49 +33,43 @@ body, html {
 .grid-item img {
     width: 100%;
     height: auto;
+    animation: rotateImage infinite 20s linear; /* Infinite rotation for visual effect */
 }
 
-#popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
+@keyframes rotateImage {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.popup {
+    position: fixed; /* Fixed position to stay in place on scroll */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for perfect centering */
     z-index: 20;
+    color: #FA00FF;
     padding: 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,.5);
-}
-
-#popup-content {
+    width: 60%;
+    max-width: 600px;
+    background-color: transparent; /* Transparent background for the popup */
+    border: none; /* No border */
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center content vertically and horizontally */
+    font-size: 3vw;
+    font-weight: 500;
 }
 
-#popup-content img {
-    width: 50%;
+.popup img {
+    max-width: 90%;
     height: auto;
+    cursor: pointer; /* Cursor pointer for clickable effect */
 }
 
-#popup-desc {
-    margin-left: 20px;
-}
-
-#close-draggable, #trash-can {
-    background: #ccc;
-    width: 50px;
-    height: 50px;
-    position: fixed;
-    cursor: grab;
-}
-
-#close-draggable {
-    background-image: url('close-icon.png'); /* Use a fun icon here */
-    bottom: 20px;
-    right: 20px;
-}
-
-#trash-can {
-    background-image: url('trash-can-icon.png'); /* Use a trash can icon */
-    bottom: 20px;
-    left: 20px;
+.popup p {
+    margin-top: 20px;
+    color: #FA00FF;
+    text-align: center; /* Center the description text */
 }

@@ -3,26 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yum Gallery</title>
+    <title>My Food</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <div id="overlay"></div>
     <div id="yum">YUM.</div>
     <div class="grid">
-        <!-- Populate with images -->
-        <!-- Image tags with data-desc attribute for descriptions -->
-        <!-- Example: -->
-        <!-- <div class="grid-item" onclick="openPopup(this)" data-desc="This is a delicious meal."><img src="image1.jpg" alt=""></div> -->
-        <!-- Repeat for each image -->
+        <!-- Images -->
+        <div class="grid-item" onclick="openPopup(this)" data-desc="BI-BIM-BAP.">
+            <img src="imgs/food1.png" alt="">
+        </div>
+        <div class="grid-item" onclick="openPopup(this)" data-desc="JEH-YOOK-BOK-KEUM.">
+            <img src="imgs/food2.png" alt="">
+        </div>
+        <div class="grid-item" onclick="openPopup(this)" data-desc="CHIK-IN.">
+            <img src="imgs/food3.png" alt="">
+        </div>
+        <div class="grid-item" onclick="openPopup(this)" data-desc="MAH-POH TOH-FOO.">
+            <img src="imgs/food4.png" alt="">
+        </div>
+        <div class="grid-item" onclick="openPopup(this)" data-desc="AL-FRAY-DOH PAH-STUH.">
+            <img src="imgs/food5.png" alt="">
+        </div>
+        <div class="grid-item" onclick="openPopup(this)" data-desc="SAHM-GYE-TAHNG.">
+            <img src="imgs/food6.png" alt="">
+        </div>
+        <div class="grid-item" onclick="openPopup(this)" data-desc="SPRING ROHL.">
+            <img src="imgs/food7.png" alt="">
+        </div>
+        <div class="grid-item" onclick="openPopup(this)" data-desc="TTEOK-BOK-KI.">
+            <img src="imgs/food8.png" alt="">
+        </div>
+        <div class="grid-item" onclick="openPopup(this)" data-desc="STAY-K.">
+            <img src="imgs/food9.png" alt="">
+        </div>
+        <div class="grid-item" onclick="openPopup(this)" data-desc="VOD-KUH-PAH-STUH.">
+            <img src="imgs/food10.png" alt="">
+        </div>
+        <div class="grid-item" onclick="openPopup(this)" data-desc="DU-BU KIM-CHEE.">
+            <img src="imgs/food11.png" alt="">
+        </div>
+        <div class="grid-item" onclick="openPopup(this)" data-desc="PAH JEON.">
+            <img src="imgs/food12.png" alt="">
+        </div>
     </div>
     <div id="popup">
         <div id="popup-content">
             <img id="popup-image" src="" alt="">
             <p id="popup-desc"></p>
         </div>
-        <div id="close-draggable" draggable="true"></div>
-        <div id="trash-can"></div>
     </div>
     <script src="main.js"></script>
 </body>
