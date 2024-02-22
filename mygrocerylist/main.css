@@ -55,11 +55,10 @@ body, html {
     width: 100vw;
 }
 
-/* Custom Cursor Styling */
 #customCursor {
     position: fixed;
-    width: 10vw; /* Adjust this value as needed */
-    height: 10vw; /* Adjust this value to keep the cursor aspect ratio if needed */
+    width: 10vw; 
+    height: 10vw; 
     background-image: url('imgs/bag.png');
     background-size: 100% 100%;
     pointer-events: none;
@@ -67,3 +66,31 @@ body, html {
     display: none;
 }
 
+@media (max-width: 1000px) {
+    .title {
+        font-size: 18px; 
+    }
+    .scroll-text {
+        font-size: 5vw; 
+    }
+    #customCursor {
+        width: 12vw; 
+        height: 13vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 16px; 
+    }
+    .scroll-text {
+        font-size: 6vw; 
+    }
+    #customCursor {
+        width: 12vw;
+        height: 13vw;
+    }
+    .scroll-container {
+        top: 20%; 
+    }
+}

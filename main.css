@@ -30,3 +30,24 @@ body {
 #block3 { background-color: green; }
 #block4 { background-color: yellow; }
 #block5 { background-color: purple; }
+
+@media (max-width: 1000px) {
+    .block {
+        width: 60vw;
+    }
+    #center-text {
+        font-size: 2.5rem; 
+    }
+}
+
+@media (max-width: 600px) {
+    .block {
+        width: 80vw; 
+    }
+    #center-text {
+        font-size: 2rem; 
+    }
+    body {
+        overflow-y: auto; 
+    }
+}

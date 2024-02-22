@@ -33,7 +33,7 @@ body, html {
 .grid-item img {
     width: 100%;
     height: auto;
-    animation: rotateImage infinite 20s linear; /* Infinite rotation for visual effect */
+    animation: rotateImage infinite 20s linear; 
 }
 
 @keyframes rotateImage {
@@ -42,22 +42,22 @@ body, html {
 }
 
 .popup {
-    position: fixed; /* Fixed position to stay in place on scroll */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust for perfect centering */
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
     z-index: 20;
     color: #FA00FF;
     padding: 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,.5);
     width: 60%;
     max-width: 600px;
-    background-color: transparent; /* Transparent background for the popup */
-    border: none; /* No border */
+    background-color: transparent; 
+    border: none; 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Center content vertically and horizontally */
+    align-items: center; 
     font-size: 3vw;
     font-weight: 500;
 }
@@ -65,11 +65,44 @@ body, html {
 .popup img {
     max-width: 90%;
     height: auto;
-    cursor: pointer; /* Cursor pointer for clickable effect */
+    cursor: pointer; 
 }
 
 .popup p {
     margin-top: 20px;
     color: #FA00FF;
-    text-align: center; /* Center the description text */
+    text-align: center; 
+}
+
+@media (max-width: 1000px) {
+    #yum {
+        font-size: 20vw; 
+    }
+
+    .grid-item {
+        width: calc(50% - 10px); 
+    }
+
+    .popup {
+        width: 80%; 
+        font-size: 5vw; 
+    }
+}
+
+@media (max-width: 600px) {
+    #yum {
+        font-size: 15vw; 
+    }
+
+    .grid {
+        padding: 20px;
+    }
+
+    .grid-item {
+        width: 100%; 
+    }
+
+    .popup {
+        font-size: 6vw; 
+    }
 }

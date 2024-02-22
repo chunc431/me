@@ -12,10 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.scroll-container').scrollLeft += e.deltaY + e.deltaX;
     });
 
-    // Cursor update logic remains the same
     const cursor = document.getElementById('customCursor');
     document.addEventListener('mousemove', function(e) {
-        const cursorSizeVw = 5; // Adjust based on your CSS
+        const cursorSizeVw = 5; 
         const vwInPixels = document.documentElement.clientWidth / 100;
         const cursorSizePixels = cursorSizeVw * vwInPixels;
 
@@ -52,11 +51,10 @@ function showImage(src) {
     img.style.left = `${randomPosition()}vw`;
     img.style.top = `${randomPosition()}vh`;
     img.style.width = '100px';
-    img.style.zIndex = '1'; // Ensures the image is layered appropriately.
+    img.style.zIndex = '1'; 
 
-    // Add a mouseover event listener to remove the image when the cursor hovers over it
     img.addEventListener('mouseover', function() {
-        img.remove(); // This will remove the image from the document
+        img.remove(); 
     });
 
     document.body.appendChild(img);

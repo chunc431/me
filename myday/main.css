@@ -12,15 +12,14 @@ body {
 img {
   position: absolute;
   cursor: pointer;
-  transition: transform 0.5s ease; /* Smooth transition for transformations */
+  transition: transform 0.5s ease; 
 }
 
-/* Individual styles for each image */
 #img1 {
   top: 25vh;
   right: 42vw;
   transform: rotate(15deg);
-  width: 18vw; /* Adjusted size */
+  width: 18vw; 
   height: auto;
 }
 
@@ -28,7 +27,7 @@ img {
   bottom: 0vh;
   left: 10vw;
   transform: rotate(10deg);
-  width: 23vw; /* Adjusted size */
+  width: 23vw; 
   height: auto;
 }
 
@@ -36,14 +35,14 @@ img {
   top: 5vh;
   left: 2vw;
   transform: rotate(-15deg);
-  width: 21vw; /* Adjusted size */
+  width: 21vw; 
   height: auto;
 }
 
 #img4 {
   top: 0vh;
   right: 0vw;
-  width: 37vw; /* Adjusted size */
+  width: 37vw;
   height: auto;
 }
 
@@ -53,12 +52,10 @@ img {
   margin: 2px;
 }
 
-/* Glow effect */
 .text-glow {
   text-shadow: 0 0 8px #fff;
 }
 
-/* Blink effect */
 @keyframes blink {
   50% {
       opacity: 0;
@@ -68,7 +65,6 @@ img {
   animation: blink 1s step-start 0s infinite;
 }
 
-/* Shake effect */
 @keyframes shake {
   0%, 100% {
       transform: translateX(0);
@@ -85,4 +81,43 @@ img {
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
+}
+
+@media (max-width: 1000px) {
+  body {
+    font-size: 1.8rem; 
+    padding: 10px;
+  }
+  
+  img {
+    width: 25vw; 
+  }
+
+  #img1 { top: 30vh; right: 45vw; }
+  #img2 { bottom: 5vh; left: 5vw; }
+  #img3 { top: 10vh; left: 5vw; }
+  #img4 { top: 15vh; right: 0vw; }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 1.4rem; 
+  }
+
+  img {
+    width: 50vw;
+  }
+
+  #img4 {
+    top: 0vh;
+    right: 0vw;
+    width: 37vw;
+    height: auto;
+  }
+
+  #img1 { top: 40vh; right: 45vw; }
+  #img2 { bottom: 5vh; left: 5vw; }
+  #img3 { top: 10vh; left: 5vw; }
+  #img4 { top: 5vh; right: 0vw; }
+
 }

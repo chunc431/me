@@ -1,4 +1,4 @@
-let zIndex = 21; // Initial zIndex for popups
+let zIndex = 21; 
 
 function openPopup(element) {
     const popup = document.createElement('div');
@@ -19,10 +19,8 @@ function openPopup(element) {
 
     document.body.appendChild(popup);
 
-    // Allow dragging the popup
     dragElement(popup);
 
-    // Close popup on image click
     img.onclick = function() {
         popup.remove();
     }

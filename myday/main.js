@@ -1,17 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Convert each paragraph's text into draggable words
     document.querySelectorAll('p').forEach(p => {
         let words = p.innerText.split(/\s+/).map(word => {
             let span = document.createElement('span');
             span.innerText = word;
             span.className = 'draggable';
             span.setAttribute('draggable', true);
-            return span.outerHTML; // Keep words separate without adding extra spaces here
-        }).join(' '); // Add a space between spans to maintain natural text spacing
+            return span.outerHTML; 
+        }).join(' '); 
         p.innerHTML = words;
     });
 
-    // Drag and Drop functionality
     function handleDragStart(e) {
         e.dataTransfer.setData('text/plain', e.target.innerText);
         e.dataTransfer.effectAllowed = 'move';
@@ -19,17 +17,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function handleDragOver(e) {
-        e.preventDefault(); // Allows us to drop
+        e.preventDefault(); 
         e.dataTransfer.dropEffect = 'move';
     }
 
     function handleDrop(e) {
         e.preventDefault();
         const data = e.dataTransfer.getData('text');
-        // Insert the dragged word with spaces before and after to maintain layout
         e.target.insertAdjacentHTML('beforebegin', `<span class="draggable" draggable="true">${data}</span> `);
-        document.querySelector('.dragging').remove(); // Remove the original dragging element
-        rebindDragEvents(); // Rebind the events to include newly added elements
+        document.querySelector('.dragging').remove(); 
+        rebindDragEvents(); 
     }
 
     function rebindDragEvents() {
@@ -45,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     rebindDragEvents();
 
-    // Hover effects and making images disappear on click
     function addEffectToParagraphs(effectClass) {
         document.querySelectorAll('p').forEach(p => p.classList.add(effectClass));
     }
